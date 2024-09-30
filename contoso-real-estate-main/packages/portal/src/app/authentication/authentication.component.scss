@@ -1,0 +1,72 @@
+h1 {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+a {
+  appearance: button;
+  text-decoration: none;
+  margin: 4px;
+  display: block;
+  width: 250px;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  nav {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+
+    a {
+      width: 100%;
+      margin: 10px 0;
+
+      .content {
+        display: flex;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+
+        .text {
+          margin-left: 16px;
+        }
+      }
+    }
+  }
+  img {
+    width: 400px;
+    aspect-ratio: 1;
+  }
+}
+
+.button.btn__google {
+  background-color: #4285f4;
+  color: #fff;
+}
+
+.button.btn__facebook {
+  background-color: #3b5998;
+  color: #fff;
+}
+
+.button.btn__github {
+  background-color: #333;
+  color: #fff;
+}
+
+.button.btn__linkedin {
+  background-color: #0077b5;
+  color: #fff;
+}
+
+.button.btn__microsoft {
+  background-color: #f65314;
+  color: #fff;
+}

@@ -1,0 +1,49 @@
+{
+  "name": "contoso-real-estate",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "start": "concurrently npm:start:* --kill-others-on-fail",
+    "start:services": "docker compose up",
+    "start:api": "npm run start --workspace=api",
+    "start:portal": "npm run start:swa --workspace=portal",
+    "start:notifications": "npm run start --workspace=notifications",
+    "test": "npm run test -ws --if-present",
+    "build": "npm run build -ws --if-present",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "npm run lint -ws --if-present",
+    "lint:fix": "npm run lint:fix -ws --if-present",
+    "clean": "rimraf \"packages/**/*.tsbuildinfo\"",
+    "clean:install": "rimraf \"packages/**/node_modules\" \"node_modules\" && npm install"
+  },
+  "keywords": [],
+  "author": "Microsoft",
+  "license": "MIT",
+  "workspaces": [
+    "packages/*",
+    "!packages/api-legacy"
+  ],
+  "engines": {
+    "node": ">=18.16.0",
+    "npm": ">=8"
+  },
+  "devDependencies": {
+    "azure-functions-core-tools": "4.0.5530",
+    "concurrently": "^7.6.0",
+    "git-commit-msg-linter": "^4.2.1",
+    "prettier": "^2.7.1",
+    "esbuild": "^0.16.7",
+    "rimraf": "^4.3.1"
+  },
+  "prettier": {
+    "trailingComma": "all",
+    "tabWidth": 2,
+    "semi": true,
+    "singleQuote": false,
+    "printWidth": 120,
+    "bracketSpacing": true,
+    "arrowParens": "avoid"
+  }
+}
